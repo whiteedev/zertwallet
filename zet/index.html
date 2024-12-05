@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face ID Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face ID Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    #login-container {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <h1>Вход с Face ID</h1>
-    <button id="faceIdButton">Войти с Face ID</button>
+  <div id="login-container">
+    <h1>Login</h1>
+    <button id="face-id-button">Login with Face ID</button>
     <p id="status"></p>
+  </div>
 
-    <script>
-        document.getElementById('faceIdButton').addEventListener('click', async () => {
-            if (!window.PublicKeyCredential) {
-                document.getElementById('status').innerText = "Ваш браузер не поддерживает Face ID.";
-                return;
-            }
+  <script>
+    const button = document.getElementById('face-id-button');
+    const status = document.getElementById('status');
 
-            try {
-                // Генерация вызова Face ID
-                const credential = await navigator.credentials.get({
-                    publicKey: {
-                        challenge: Uint8Array.from('random_challenge', c => c.charCodeAt(0)), // Сгенерировано сервером
-                        allowCredentials: [{
-                            id: Uint8Array.from('example_credential_id', c => c.charCodeAt(0)), // Уникальный ID учетной записи
-                            type: "public-key",
-                            transports: ["internal"]
-                        }],
-                        userVerification: "required", // Требуется Face ID
-                    }
-                });
+    button.addEventListener('click', async () => {
+      if (!window.PublicKeyCredential) {
+        status.textContent = "Face ID not supported on this browser.";
+        return;
+      }
 
-                document.getElementById('status').innerText = "Успешный вход через Face ID!";
-                console.log("Учетные данные:", credential);
-            } catch (error) {
-                console.error("Ошибка аутентификации:", error);
-                document.getElementById('status').innerText = "Ошибка входа.";
-            }
+      try {
+        // Example options for WebAuthn (replace with your backend config)
+        const options = {
+          challenge: new Uint8Array(32), // Replace with challenge from your server
+          rpId: window.location.hostname, // Replace with your domain
+          userVerification: 'required',
+        };
+
+        // Call WebAuthn API to authenticate
+        const credential = await navigator.credentials.get({
+          publicKey: options,
         });
-    </script>
+
+        if (credential) {
+          status.textContent = "Login successful!";
+          // Send credential to your backend for verification
+        } else {
+          status.textContent = "Login failed.";
+        }
+      } catch (error) {
+        console.error(error);
+        status.textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
 </body>
 </html>
