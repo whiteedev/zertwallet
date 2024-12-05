@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face ID Login</title>
+    <title>Face ID Authentication</title>
 </head>
 <body>
-    <h1>Вход с помощью Face ID</h1>
-    <button id="faceIdLogin">Войти с Face ID</button>
+    <h1>Вход с Face ID</h1>
+    <button id="faceIdButton">Войти с Face ID</button>
     <p id="status"></p>
 
     <script>
-        document.getElementById('faceIdLogin').addEventListener('click', async () => {
+        document.getElementById('faceIdButton').addEventListener('click', async () => {
             if (!window.PublicKeyCredential) {
-                document.getElementById('status').innerText = "Ваш браузер не поддерживает WebAuthn.";
+                document.getElementById('status').innerText = "Ваш браузер не поддерживает Face ID.";
                 return;
             }
 
             try {
-                // Инициализация Face ID
+                // Генерация вызова Face ID
                 const credential = await navigator.credentials.get({
                     publicKey: {
-                        challenge: new Uint8Array(32), // Должен быть предоставлен сервером
-                        allowCredentials: [], // Список разрешенных учетных данных
-                        timeout: 60000,
-                        userVerification: "required" // Требуется биометрическая проверка
+                        challenge: Uint8Array.from('random_challenge', c => c.charCodeAt(0)), // Сгенерировано сервером
+                        allowCredentials: [{
+                            id: Uint8Array.from('example_credential_id', c => c.charCodeAt(0)), // Уникальный ID учетной записи
+                            type: "public-key",
+                            transports: ["internal"]
+                        }],
+                        userVerification: "required", // Требуется Face ID
                     }
                 });
 
-                document.getElementById('status').innerText = "Успешная аутентификация!";
-                console.log("Credential:", credential);
+                document.getElementById('status').innerText = "Успешный вход через Face ID!";
+                console.log("Учетные данные:", credential);
             } catch (error) {
-                console.error("Ошибка:", error);
-                document.getElementById('status').innerText = "Не удалось выполнить аутентификацию.";
+                console.error("Ошибка аутентификации:", error);
+                document.getElementById('status').innerText = "Ошибка входа.";
             }
         });
     </script>
