@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ZetWallet">
-    <link rel="apple-touch-icon" href="zet.jpg">  
-    <title>ZET BANK</title>
+    <title>Face ID Login</title>
 </head>
 <body>
-    <div class="rubles-div">
-        <h1 class="rubles-balance">0 $</h1>
-    </div>
-    <div class="popolnenie-wallet"><h1 class="popwal">Пополнить кошелек</h1></div>
+    <h1>Вход с помощью Face ID</h1>
+    <button id="faceIdLogin">Войти с Face ID</button>
+    <p id="status"></p>
+
+    <script>
+        document.getElementById('faceIdLogin').addEventListener('click', async () => {
+            if (!window.PublicKeyCredential) {
+                document.getElementById('status').innerText = "Ваш браузер не поддерживает WebAuthn.";
+                return;
+            }
+
+            try {
+                // Инициализация Face ID
+                const credential = await navigator.credentials.get({
+                    publicKey: {
+                        challenge: new Uint8Array(32), // Должен быть предоставлен сервером
+                        allowCredentials: [], // Список разрешенных учетных данных
+                        timeout: 60000,
+                        userVerification: "required" // Требуется биометрическая проверка
+                    }
+                });
+
+                document.getElementById('status').innerText = "Успешная аутентификация!";
+                console.log("Credential:", credential);
+            } catch (error) {
+                console.error("Ошибка:", error);
+                document.getElementById('status').innerText = "Не удалось выполнить аутентификацию.";
+            }
+        });
+    </script>
 </body>
 </html>
