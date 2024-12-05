@@ -1,7 +1,7 @@
 {
     "name": "ZET BANK",
     "short_name": "ZET",
-    "description": "Банковское приложение Zet",
+    "description": "zet wallet",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#1f0444",
