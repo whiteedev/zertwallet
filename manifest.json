@@ -1,0 +1,21 @@
+{
+    "name": "ZET BANK",
+    "short_name": "ZET",
+    "description": "Банковское приложение Zet",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1f0444",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "zet.jpg",
+        "sizes": "192x192",
+        "type": "image/jpg"
+      },
+      {
+        "src": "zet.jpg",
+        "sizes": "512x512",
+        "type": "image/jpg"
+      }
+    ]
+  }
