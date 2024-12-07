@@ -9,14 +9,14 @@
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    padding: 30px;
+    padding: 15px;
     border-radius: 6px 6px 0 0; /* Закругленные углы сверху */
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
     transition: background-color 0.3s ease;
 }
 
 .nav-bar:hover {
-    background-color: #f8f8f8; /* При наведении цвет панели темнеет */
+    background-color: #fcfcfc; /* При наведении цвет панели темнеет */
 }
 
 /* Стили для элементов навигации */
@@ -32,7 +32,7 @@
 /* Эффекты при наведении на элементы */
 .nav-item:hover {
     transform: scale(1.1); /* Увеличение при наведении */
-    background-color: rgba(255, 255, 255, 0.11); /* Легкое затемнение */
+    background-color: rgba(209, 209, 209, 0.11); /* Легкое затемнение */
 }
 
 /* Стили для изображений в элементах навигации */
@@ -46,7 +46,7 @@
 #content {
     padding: 20px;
     min-height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     transition: margin-bottom 0.3s ease; /* Анимация при появлении панели */
 }
 
