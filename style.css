@@ -34,3 +34,50 @@ body {
     text-align: center;
     font-style: normal;
 }
+
+
+
+/* Основной контейнер */
+.pays {
+    background-color: #f4f4f4; /* Светлый фон */
+    margin: 15px 5px; /* Отступы вокруг блока */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
+    display: flex; /* Расположение элементов по горизонтали */
+    justify-content: flex-start; /* Выравнивание слева */
+    gap: 30px; /* Отступы между блоками */
+    flex-wrap: nowrap; /* Отключаем перенос элементов на новую строку */
+}
+
+/* Блок с картинкой и текстом */
+.pay-zet, .pay-other {
+    display: flex; /* Расположение элементов по вертикали */
+    flex-direction: column; /* Элементы в колонку */
+    align-items: center; /* Выравнивание по центру */
+}
+
+/* Стиль для картинки */
+.zet-pay {
+    width: 60px; /* Ширина картинки */
+    height: 60px; /* Высота картинки */
+    border-radius: 50%; /* Картинка круглая */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Текст под картинкой */
+.zet-text {
+    font-size: 14px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    font-weight: 600; /* Жирный шрифт */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Заголовок */
+.payments-div h1 {
+    font-size: 24px; /* Размер шрифта для заголовка */
+    color: #333; /* Цвет текста */
+    font-weight: bold; /* Жирное начертание */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+

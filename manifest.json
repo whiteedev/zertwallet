@@ -1,8 +1,8 @@
 {
-    "name": "ZET BANK",
-    "short_name": "ZET БАНК",
+    "name": "ZET БАНК",
+    "short_name": "ZET",
     "description": "Банковское приложение Zet",
-    "start_url": "https://whiteedev.github.io/zetwallet/",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#1f0444",
     "theme_color": "#000000",
@@ -19,3 +19,4 @@
       }
     ]
   }
+      

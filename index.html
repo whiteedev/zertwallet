@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ZetWallet">
-    <link rel="apple-touch-icon" href="zet.jpg">  
-    <title>ZET BANK</title>
+    <title>Навигация</title>
+    <link rel="stylesheet" href="header.css">
 </head>
 <body>
-    <div class="rubles-div">
-        <h1 class="rubles-balance">0 $</h1>
+
+    <!-- Основной контент страницы -->
+    <div id="content">
+        <!-- Здесь будет подгружаться контент -->
     </div>
-    <div class="popolnenie-wallet"><h1 class="popwal">Пополнить кошелек</h1></div>
+
+    <!-- Блок с иконками навигации -->
+    <div class="nav-bar">
+        <button class="nav-item" onclick="loadPage('home.html')">
+            <img class="homeicon" src="home.png" alt=""/>        </button>
+        <button class="nav-item" onclick="loadPage('stories.html')">
+            <img src="home.png" alt=""/>        </button>
+        <button class="nav-item" onclick="loadPage('settings.html')">
+            <img src="home.png" alt=""/>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

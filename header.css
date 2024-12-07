@@ -1,0 +1,57 @@
+/* Стили для навигационной панели */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Центрирование панели по горизонтали */
+    width: 100%; /* Немного уменьшить ширину */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px 6px 0 0; /* Закругленные углы сверху */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
+    transition: background-color 0.3s ease;
+}
+
+.nav-bar:hover {
+    background-color: #f8f8f8; /* При наведении цвет панели темнеет */
+}
+
+/* Стили для элементов навигации */
+.nav-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; /* Круглая форма кнопок */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Эффекты при наведении на элементы */
+.nav-item:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: rgba(255, 255, 255, 0.11); /* Легкое затемнение */
+}
+
+/* Стили для изображений в элементах навигации */
+.nav-item img {
+    width: 70px;
+    height: 70px;
+    transition: opacity 0.3s ease;
+}
+
+/* Добавить стили для контента */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    transition: margin-bottom 0.3s ease; /* Анимация при появлении панели */
+}
+
+/* Добавим небольшой отступ снизу, чтобы контент не прилипал к панели */
+#content.with-nav-bar {
+    margin-bottom: 80px; /* Высота панели */
+}
+
