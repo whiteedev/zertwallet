@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     background-color: #fff;
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 
 
 .rubles-div {
-    margin: 15px 5px;
+    margin: 10px 5px;
     padding: 60px 20px;
     background: rgb(175,139,242);
     background: linear-gradient(135deg, rgba(175,139,242,1) 0%, rgba(113,12,207,1) 30%, rgba(116,6,232,1) 67%, rgba(89,0,255,1) 100%);    border-radius: 20px;
@@ -17,14 +18,8 @@ body {
 .rubles-balance {
     color:#fff;
     text-align: center;
-}
-
-.popolnenie-wallet {
-    border: none 2px;
-    border-radius: 16px;
-    margin: 20px 5px;
-    padding: 4px 10px;
-    background: #671ecc;
+    font-weight: 850;
+    font-size: 40px;
 }
 
 .popwal {
@@ -81,3 +76,54 @@ body {
     margin-bottom: 20px; /* Отступ снизу */
 }
 
+.payments-div h1 {
+    font-weight: 800;
+    color: #161616;
+}
+
+/* Добавляем анимацию мигающей тени */
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 0 6px 15px rgba(113, 12, 207, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(113, 12, 207, 0.7);
+    }
+    100% {
+        box-shadow: 0 6px 15px rgba(113, 12, 207, 0.4);
+    }
+}
+
+.rubles-div {
+    margin: 15px 5px;
+    padding: 60px 20px;
+    background: rgb(175, 139, 242);
+    background: linear-gradient(135deg, rgba(175, 139, 242, 1) 0%, rgba(113, 12, 207, 1) 30%, rgba(116, 6, 232, 1) 67%, rgba(89, 0, 255, 1) 100%); /* Градиентный фон */
+    border-radius: 20px;
+    animation: pulse-shadow 1.5s infinite; /* Анимация пульсации тени */
+}
+
+.popolnenie-wallet {
+    border: none;
+    border-radius: 22px;
+    margin: 20px 5px;
+    padding: 4px 10px;
+    background: #671ecc;
+    box-shadow: 0 6px 12px rgba(113, 12, 207, 0.3); /* Мягкая фиолетовая тень для кнопки */
+}
+
+.popwal {
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal;
+}
+
+
+.all-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(24, 85, 197);
+    margin: 0 10px;
+}

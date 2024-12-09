@@ -9,14 +9,9 @@
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    padding: 15px;
+    padding: 5px;
     border-radius: 6px 6px 0 0; /* Закругленные углы сверху */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
     transition: background-color 0.3s ease;
-}
-
-.nav-bar:hover {
-    background-color: #fcfcfc; /* При наведении цвет панели темнеет */
 }
 
 /* Стили для элементов навигации */
@@ -30,9 +25,14 @@
 }
 
 /* Эффекты при наведении на элементы */
+.nav-item:hover svg {
+    fill: #671ecc
+}
+
+/* Эффекты при наведении на элементы */
 .nav-item:hover {
     transform: scale(1.1); /* Увеличение при наведении */
-    background-color: rgba(209, 209, 209, 0.11); /* Легкое затемнение */
+    background-color: #5c5c5c0a;
 }
 
 /* Стили для изображений в элементах навигации */
