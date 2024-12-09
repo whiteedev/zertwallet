@@ -5,14 +5,8 @@ body {
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     font-style: normal;
-}
-
-
-.rubles-div {
-    margin: 10px 5px;
-    padding: 60px 20px;
-    background: rgb(175,139,242);
-    background: linear-gradient(135deg, rgba(175,139,242,1) 0%, rgba(113,12,207,1) 30%, rgba(116,6,232,1) 67%, rgba(89,0,255,1) 100%);    border-radius: 20px;
+    touch-action: none;
+    user-select: none;
 }
 
 .rubles-balance {
@@ -34,7 +28,7 @@ body {
 
 /* Основной контейнер */
 .pays {
-    background-color: #f4f4f4; /* Светлый фон */
+    background-color: #eeeeee80; /* Светлый фон */
     margin: 15px 5px; /* Отступы вокруг блока */
     padding: 20px; /* Внутренние отступы */
     border-radius: 12px; /* Скругленные углы */
@@ -95,8 +89,8 @@ body {
 }
 
 .rubles-div {
-    margin: 15px 5px;
-    padding: 60px 20px;
+    margin: 10px 2px;
+    padding: 50px 10px;
     background: rgb(175, 139, 242);
     background: linear-gradient(135deg, rgba(175, 139, 242, 1) 0%, rgba(113, 12, 207, 1) 30%, rgba(116, 6, 232, 1) 67%, rgba(89, 0, 255, 1) 100%); /* Градиентный фон */
     border-radius: 20px;
@@ -106,8 +100,8 @@ body {
 .popolnenie-wallet {
     border: none;
     border-radius: 22px;
-    margin: 20px 5px;
-    padding: 4px 10px;
+    margin: 20px 2px;
+    padding: 1px 10px;
     background: #671ecc;
     box-shadow: 0 6px 12px rgba(113, 12, 207, 0.3); /* Мягкая фиолетовая тень для кнопки */
 }
@@ -115,7 +109,7 @@ body {
 .popwal {
     color: #fff;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
     font-style: normal;
 }
