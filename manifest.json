@@ -2,7 +2,7 @@
     "name": "Zet Wallet",
     "short_name": "ZET",
     "description": "Электронный кошелек Zet",
-    "start_url": "/",
+    "start_url": "https://whiteedev.github.io/zetwallet/index.html",
     "display": "standalone",
     "background_color": "#1f0444",
     "theme_color": "#000000",
